@@ -1,0 +1,131 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+
+body{
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+h1{
+    font-size: 64px;
+    padding-top: 40px;
+    text-align: center;
+    font-weight: 800;
+
+    background: linear-gradient(to right, #FCA311 0%, #ffcd7d 40%, #ffd494 80%, #FCA311 100%);
+    background-size: 200% auto;
+
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    animation: gradient 5s infinite linear;
+}
+
+@keyframes gradient {
+    to {
+      background-position: 200% center;
+    }
+}
+
+.auth,.test{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-wrapper{
+    background-color: #E5E5E5;
+    border: 2px solid #FCA311;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 36px 0px #fca21150;
+    height: 650px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.content{
+    margin-top: -45px;
+    margin-inline: auto;
+    width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    height: 90vh;
+}
+
+/* input */
+
+label{
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: -20px;
+    margin-left: 5px;
+}
+
+.kezdes_btn {
+    color: #555;
+    font-size: 25px;
+    display: block;
+    margin: 40px auto;
+    margin-bottom: 0px !important;
+    padding: 10px 20px;
+    border: 0;
+    background-color: #FCA311;
+    box-shadow: 0px 0px 32px 5px #fca21172;
+    border-radius: 50px;
+    transition: all 0.2s;
+}
+
+.kezdes_btn:hover {
+    color: #E5E5E5;
+    font-size: 25px;
+    display: block;
+    margin: 40px auto;
+    margin-bottom: 0px !important;
+    padding: 10px 20px;
+    border: 0;
+    background-color: #8e6d38;
+    box-shadow: 0px 0px 32px 5px #8e6d3865;
+    border-radius: 50px;
+}
+
+
+input[type=text]{
+    font-size: 14px;
+    padding: 15px 20px;
+    border-radius: 50px;
+    outline: none;
+    border: 0.5px solid grey;
+    box-shadow: 0px 0px 42px 0px #beb2ff36;
+    transition: all 0.3s;
+}
+
+input[type=text]:focus{
+    background-color: #a0c4ff2a;
+    box-shadow: 0px 0px 42px 0px #beb2ff6f;
+}
+
+input[data-status=correct]{
+    border-color: #3b5c34;
+    background-color: #caffbf3f;
+    box-shadow: 0px 0px 42px 0px #caffbf3f;
+}
+
+input[data-status=incorrect]{
+    border-color: #8b3b3b;
+    background-color: #ffadad5b;
+    box-shadow: 0px 0px 42px 0px #ffadad5b;
+}
+
+

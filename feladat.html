@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <title>JS Projekt feladat</title>
+    <link rel="stylesheet" href="feladat.css">
+</head>
+<body>
+    
+    <h1 data-aos="fade-in" data-aos-delay="200">JS Projekt</h1>
+    <div class="content" data-aos="fade-in" data-aos-delay="200">
+        <div class="auth">
+            <div data-aos="fade-up" data-aos-delay="500" class="box-wrapper">
+                <form class="form">
+                    <label>Kitöltő neve</label>
+                    <input type="text" class="name" name="name" placeholder="Példa Béla" data-status="normal" onkeyup="checkName(this)" >
+                    <label data-aos="fade-up">E-mail cím</label>
+                    <input type="text" class="email" name="email" placeholder="Peldabela@gmail.com" data-status="normal" onkeyup="checkEmail(this)">
+                    <label data-aos="fade-up">Születési dátum</label>
+                    <input type="text" class="birthdate" name="birthdate" placeholder="2000.01.01" data-status="normal" onkeyup="checkBirthdate(this)">
+                    <label data-aos="fade-up">Jelszó</label>
+                    <input type="text" class="password" name="password" placeholder="Jelszó" data-status="normal" onkeyup="checkPass(this)">
+                </form>
+                <button class="kezdes_btn" data-status="disabled">Kezdés</button>
+            </div>
+        </div>
+        <div class="test form">
+            <div class="box-wrapper">
+                <form>
+                    <label>Kitöltő neve</label>
+                    <input type="text" class="name" name="name" placeholder="Példa Béla">
+                    <label>E-mail cím</label>
+                    <input type="text" class="email" name="email" placeholder="Peldabela@gmail.com">
+                    <label>Születési dátum</label>
+                    <input type="text" class="birthdate" name="birthdate" placeholder="2000.01.01">
+                    <label>Jelszó</label>
+                    <input type="text" class="password" name="password" placeholder="Jelszó">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="feladat.js"></script>
+</body>
+</html>
