@@ -15,7 +15,7 @@ h1{
     text-align: center;
     font-weight: 800;
 
-    background: linear-gradient(to right, #FCA311 0%, #ffcd7d 40%, #ffd494 80%, #FCA311 100%);
+    background: linear-gradient(to right, #FCA311 0%, #ffcd7d 40%, #8e6d38 45%, #ffd494 80%, #FCA311 100%);
     background-size: 200% auto;
 
     color: transparent;
@@ -44,6 +44,7 @@ h1{
     border-radius: 30px;
     box-shadow: 0px 0px 36px 0px #fca21150;
     height: 650px;
+    width: 482px;
 }
 
 form{
@@ -64,7 +65,7 @@ form{
     height: 90vh;
 }
 
-/* input */
+/* input, auth */
 
 label{
     font-weight: 500;
@@ -73,7 +74,12 @@ label{
     margin-left: 5px;
 }
 
-.kezdes_btn {
+.kezdes_btn[data-status=disabled] {
+    display: none;
+}
+
+.kezdes_btn[data-status=enabled] {
+    display: block;
     color: #555;
     font-size: 25px;
     display: block;
@@ -87,7 +93,7 @@ label{
     transition: all 0.2s;
 }
 
-.kezdes_btn:hover {
+.kezdes_btn[data-status=enabled]:hover {
     color: #E5E5E5;
     font-size: 25px;
     display: block;
@@ -127,5 +133,55 @@ input[data-status=incorrect]{
     background-color: #ffadad5b;
     box-shadow: 0px 0px 42px 0px #ffadad5b;
 }
+
+.name_label[data-status=incorrect]::before,
+.email_label[data-status=incorrect]::before,
+.birthdate_label[data-status=incorrect]::before,
+.password_label[data-status=incorrect]::before{
+    text-align: start;
+    position: absolute;
+    left: -350px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: block;
+    background-color: rgb(251, 97, 97);
+    width: 300px;
+    line-height: 1;
+    height: auto;
+}
+
+.name_label[data-status=incorrect]::before{
+    content: "Nem megfelelő a megadott név formátuma (1 nagy és kisbetű, 2 név)";
+}
+
+.email_label[data-status=incorrect]::before{
+    content: "Nem megfelelő a megadott email formátuma (min. 3 karakter @ domain . 2-4 karakter)";
+}
+
+.birthdate_label[data-status=incorrect]::before{
+    content: "Nem megfelelő a megadott születési dátum formátuma (éééé.hh.nn, pl: 2000.01.01)";
+}
+
+.password_label[data-status=incorrect]::before{
+    content: "Nem megfelelő a megadott jelszó";
+}
+
+/* test */
+
+
+.test_info[data-status=visible]{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    display: flex;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+}
+
+[data-status=hidden]{
+    display: none;
+}
+
 
 

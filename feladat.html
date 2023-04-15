@@ -22,29 +22,22 @@
         <div class="auth">
             <div data-aos="fade-up" data-aos-delay="500" class="box-wrapper">
                 <form class="form">
-                    <label>Kitöltő neve</label>
+                    <label class="name_label" data-status="normal">Kitöltő neve</label>
                     <input type="text" class="name" name="name" placeholder="Példa Béla" data-status="normal" onkeyup="checkName(this)" >
-                    <label data-aos="fade-up">E-mail cím</label>
+                    <label class="email_label" data-status="normal">E-mail cím</label>
                     <input type="text" class="email" name="email" placeholder="Peldabela@gmail.com" data-status="normal" onkeyup="checkEmail(this)">
-                    <label data-aos="fade-up">Születési dátum</label>
+                    <label class="birthdate_label" data-status="normal">Születési dátum</label>
                     <input type="text" class="birthdate" name="birthdate" placeholder="2000.01.01" data-status="normal" onkeyup="checkBirthdate(this)">
-                    <label data-aos="fade-up">Jelszó</label>
+                    <label class="password_label" data-status="normal">Jelszó</label>
                     <input type="text" class="password" name="password" placeholder="Jelszó" data-status="normal" onkeyup="checkPass(this)">
                 </form>
-                <button class="kezdes_btn" data-status="disabled">Kezdés</button>
+                <button class="kezdes_btn" onclick="kezdesbtn_click()" data-status="disabled">Kezdés</button>
             </div>
         </div>
         <div class="test form">
-            <div class="box-wrapper">
+            <div data-aos="fade-up" data-aos-delay="700" class="box-wrapper">
+                <p class="test_info" data-status="visible">A kezdéshez adja meg adatait, majd a jelszót</p>
                 <form>
-                    <label>Kitöltő neve</label>
-                    <input type="text" class="name" name="name" placeholder="Példa Béla">
-                    <label>E-mail cím</label>
-                    <input type="text" class="email" name="email" placeholder="Peldabela@gmail.com">
-                    <label>Születési dátum</label>
-                    <input type="text" class="birthdate" name="birthdate" placeholder="2000.01.01">
-                    <label>Jelszó</label>
-                    <input type="text" class="password" name="password" placeholder="Jelszó">
                 </form>
             </div>
         </div>
