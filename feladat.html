@@ -15,7 +15,7 @@
     <title>JS Projekt feladat</title>
     <link rel="stylesheet" href="feladat.css">
 </head>
-<body>
+<body onload="init()">
     
     <h1 data-aos="fade-in" data-aos-delay="200">JS Projekt</h1>
     <div class="content" data-aos="fade-in" data-aos-delay="200">
@@ -34,11 +34,80 @@
                 <button class="kezdes_btn" onclick="kezdesbtn_click()" data-status="disabled">Kezdés</button>
             </div>
         </div>
-        <div class="test form">
+        <div class="test">
             <div data-aos="fade-up" data-aos-delay="700" class="box-wrapper">
                 <p class="test_info" data-status="visible">A kezdéshez adja meg adatait, majd a jelszót</p>
-                <form>
-                </form>
+                <div class="test_vis" data-status="hidden">
+                    <form class="form">
+
+                        <fieldset>
+                            <label>1. Mikor került az első email elküldésre?</label>
+
+                            <div id="elso_kerdes">
+                                <div>
+                                    <input type="radio" id="r1_1" value="1_1" name="r1" checked>
+                                    <label for="r1_1">2023</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="r1_2" value="1_2" name="r1">
+                                    <label for="r1_2">1967</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="r1_3" value="1_3" name="r1">
+                                    <label for="r1_3">1971</label>
+                                </div>                            
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <label class="masodik_label" data-status="normal">2. Melyek nem JS keretrendszerek?</label>
+
+                            <div>
+                                <input type="checkbox" id="c2_1" value="2_1" name="2" onclick="BoxCheck(this)">
+                                <label for="c2_1">Angular</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="c2_2" value="2_2" name="2" onclick="BoxCheck(this)">
+                                <label for="c2_2">Gamma</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="c2_3" value="2_3" name="2" onclick="BoxCheck(this)">
+                                <label for="c2_3">CubicWeb</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="c2_4" value="2_4" name="2" onclick="BoxCheck(this)">
+                                <label for="c2_4">Aurelia</label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset style="display: flex; flex-direction:column; gap:25px;">
+                            <label class="harmadik_label" data-status="normal" for="3_1">3. Melyik internetes keresőmotor köthető Bill Gates nevéhez?</label>
+                            <input type="text" id="t3_1" value="" name="3" data-status="normal" onkeyup="checkTextAnswer(this)">
+                        </fieldset>
+
+                        <fieldset style="display: flex; flex-direction:column; gap:25px;">
+                            <label data-status="normal" for="4_1">4. Minek a rövidítése a "WWW"?</label>
+                            <input type="text" id="t4_1" value="" name="4" data-status="normal" onkeyup="checkLongAnswer()">
+                        </fieldset>
+
+                        <fieldset style="display: flex; flex-direction:column; gap:25px;">
+                            <label data-status="normal" for="5_1">
+                                asdadsadasd 
+                                <span><select name="opcio1"></select></span>
+                                asdasdsada
+                                <span><select name="opcio2"></select></span>
+                                assadasa
+                            </label>
+                        </fieldset>
+
+
+                    </form>
+                    <button class="ellenorzes_btn" onclick="ellenorzesbtn_click()" data-status="enabled">Ellenőrzés</button>
+                </div>
+                <div class="result" data-status="hidden">
+                    <p id="pontszam_label">Az elért pontszám:</p>
+                    <p id="pontszam_result"></p>
+                </div>
             </div>
         </div>
     </div>

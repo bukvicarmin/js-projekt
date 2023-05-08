@@ -5,6 +5,10 @@
     font-family: poppins;
 }
 
+.box-wrapper::-webkit-scrollbar{
+	width: 0px;
+}
+
 body{
     background-color: rgba(0, 0, 0, 0.9);
 }
@@ -37,6 +41,7 @@ h1{
     justify-content: center;
 }
 
+
 .box-wrapper{
     background-color: #E5E5E5;
     border: 2px solid #FCA311;
@@ -45,6 +50,7 @@ h1{
     box-shadow: 0px 0px 36px 0px #fca21150;
     height: 650px;
     width: 482px;
+    overflow-y: scroll;
 }
 
 form{
@@ -74,11 +80,16 @@ label{
     margin-left: 5px;
 }
 
+.kezdes_btn{
+    transition: 0.3s all;
+}
+
 .kezdes_btn[data-status=disabled] {
     display: none;
 }
 
-.kezdes_btn[data-status=enabled] {
+.kezdes_btn[data-status=enabled],
+.ellenorzes_btn[data-status=enabled] {
     display: block;
     color: #555;
     font-size: 25px;
@@ -93,7 +104,24 @@ label{
     transition: all 0.2s;
 }
 
-.kezdes_btn[data-status=enabled]:hover {
+.ellenorzes_btn[data-status=invalid] {
+    display: block;
+    color: white;
+    font-size: 25px;
+    display: block;
+    margin: 40px auto;
+    margin-bottom: 0px !important;
+    padding: 10px 20px;
+    border: 0;
+    background-color: rgb(251, 97, 97);
+    box-shadow: 0px 0px 32px 5px rgba(251, 97, 97, 0.496);
+    border-radius: 50px;
+    transition: all 0.2s;
+}
+
+
+.kezdes_btn[data-status=enabled]:hover,
+.ellenorzes_btn[data-status=enabled]:hover{
     color: #E5E5E5;
     font-size: 25px;
     display: block;
@@ -107,7 +135,7 @@ label{
 }
 
 
-input[type=text]{
+input[type=text], select {
     font-size: 14px;
     padding: 15px 20px;
     border-radius: 50px;
@@ -137,17 +165,24 @@ input[data-status=incorrect]{
 .name_label[data-status=incorrect]::before,
 .email_label[data-status=incorrect]::before,
 .birthdate_label[data-status=incorrect]::before,
-.password_label[data-status=incorrect]::before{
+.password_label[data-status=incorrect]::before,
+.masodik_label[data-status=incorrect]::before,
+.harmadik_label[data-status=incorrect]::before {
+    font-size: 15px;
+    display: block;
+    margin-top:-15px;
+    margin-right: 15px;
     text-align: start;
     position: absolute;
-    left: -350px;
+    right: 1px;
     padding: 10px 20px;
     border-radius: 20px;
     display: block;
     background-color: rgb(251, 97, 97);
-    width: 300px;
+    width: 400px;
     line-height: 1;
     height: auto;
+    transition: all 0.3s;
 }
 
 .name_label[data-status=incorrect]::before{
@@ -166,22 +201,96 @@ input[data-status=incorrect]{
     content: "Nem megfelelő a megadott jelszó";
 }
 
+.masodik_label[data-status=incorrect]::before{
+    content: "Csak kettő opció jelölhető ki";
+}
+
+.harmadik_label[data-status=incorrect]::before {
+    content: "Csak egy szó adható meg/Szám nem adható meg";
+}
+
 /* test */
 
+
+fieldset{
+    border: 0;
+}
 
 .test_info[data-status=visible]{
     text-align: center;
     font-size: 30px;
     font-weight: 500;
     display: flex;
-    height: 600px;
+    height: 560px;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s;
+}
+
+.result[data-status=hidden]{
+    display: none;
 }
 
 [data-status=hidden]{
     display: none;
 }
 
+input[type=radio] {
+    appearance: none;
+    display: inline-block;
+  
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+  
+    border: 1px solid #8e6d38;
+    transition: 0.2s all;
+    margin-right: 5px;
+  
+    position: relative;
+    top: 2px;
+}
+  
+input[type=radio]:checked {
+border: 3px solid #FCA311;
+}
+
+input[type=checkbox] {
+    appearance: none;
+    display: inline-block;
+  
+    width: 16px;
+    height: 16px;
+  
+    border: 1px solid #8e6d38;
+    transition: 0.2s all;
+    margin-right: 5px;
+  
+    position: relative;
+    top: 2px;
+}
+  
+input[type=checkbox]:checked {
+border: 3px solid #FCA311;
+}
 
 
+.result{
+    display: flex;
+    height: 560px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#pontszam_label{
+    text-align: center;
+    font-size: 36px;
+}
+
+#pontszam_result{
+    text-align: center;
+    font-size: 42px;
+    color: #FCA311;
+    font-weight: 600;
+}
