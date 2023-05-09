@@ -1,7 +1,7 @@
 AOS.init()
 
-let opcio1 = ['valasz1','valasz2','valasz3','asd'];
-let opcio2 = ['valasz4','valasz5','valasz6','asd1'];
+let opcio1 = ['fukció','adatbázis','protokoll','modul'];
+let opcio2 = ['képek','erőforrások','fájlok','felületek'];
 const select1 = document.querySelector('[name=opcio1]')
 const select2 = document.querySelector('[name=opcio2]')
 
@@ -80,7 +80,7 @@ const pontszam_result = document.querySelector("#pontszam_result")
 
 
 function checkName(name){
-    const pattern = /^[A-Z]{1}[a-z]{1,15}[" "]{1}[A-Z]{1}[a-z]{1,15}/gm;
+    const pattern = /^[A-Z]{1}[a-z]{1,15}[" "]{1}[A-Z]{1}[a-z]{1,15}$/gm;
 
 
     if (pattern.test(name.value)) {
@@ -104,7 +104,7 @@ function checkName(name){
 }
 
 function checkEmail(email){
-    const pattern = /^[A-Z]{1}[a-z]{1,15}[" "]{1}[A-Z]{1}[a-z]{1,15}/gm;
+    const pattern = /^[A-Za-z0-9]{3,20}["@"]{1}[A-Za-z]{2,10}["."]{1}[A-Za-z]{2,4}$/gm;
     
     
     if (pattern.test(email.value)) {
@@ -127,7 +127,7 @@ function checkEmail(email){
 }
 
 function checkBirthdate(BirthDate){
-    const pattern = /^[A-Z]{1}[a-z]{1,15}[" "]{1}[A-Z]{1}[a-z]{1,15}/gm;
+    const pattern = /^(19\d\d|20[01-2]\d|2023).(0[1-9]|1[0-2]).([0-2][1-9]|3[01])$/gm;
 
 
     if (pattern.test(BirthDate.value)) {
@@ -305,11 +305,11 @@ function ellenorzesbtn_click() {
         pontszam++
     }
 
-    if (select1.value == "valasz2") {
+    if (select1.value == "protokoll") {
         pontszam++
     }
 
-    if (select2.value == "valasz5") {
+    if (select2.value == "erőforrások") {
         pontszam++
     }
 

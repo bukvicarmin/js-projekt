@@ -89,7 +89,8 @@ label{
 }
 
 .kezdes_btn[data-status=enabled],
-.ellenorzes_btn[data-status=enabled] {
+.ellenorzes_btn[data-status=enabled],
+.reload_btn[data-status=enabled] {
     display: block;
     color: #555;
     font-size: 25px;
@@ -121,7 +122,8 @@ label{
 
 
 .kezdes_btn[data-status=enabled]:hover,
-.ellenorzes_btn[data-status=enabled]:hover{
+.ellenorzes_btn[data-status=enabled]:hover,
+.reload_btn[data-status=enabled]:hover{
     color: #E5E5E5;
     font-size: 25px;
     display: block;
