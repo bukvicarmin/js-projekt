@@ -80,7 +80,7 @@ const pontszam_result = document.querySelector("#pontszam_result")
 
 
 function checkName(name){
-    const pattern = /^[A-Z]{1}[a-z]{1,15}[" "]{1}[A-Z]{1}[a-z]{1,15}$/gm;
+    const pattern = /^[A-Z(Á,É,Ö,Ü,Ú,Ő,Í)]{1}[a-z(á,é,ö,ü,ő,ú,í)]{1,15}[" "]{1}[A-Z(Á,É,Ö,Ü,Ú,Ő,Í)]{1}[a-z(á,é,ö,ü,ő,ú,í)]{1,15}$/gm;
 
 
     if (pattern.test(name.value)) {
@@ -104,7 +104,7 @@ function checkName(name){
 }
 
 function checkEmail(email){
-    const pattern = /^[A-Za-z0-9]{3,20}["@"]{1}[A-Za-z]{2,10}["."]{1}[A-Za-z]{2,4}$/gm;
+    const pattern = /^[A-Za-z0-9]{3,20}["@"]{1}[A-Za-z]{2,10}["."]{1}[A-Za-z]{2,6}$/gm;
     
     
     if (pattern.test(email.value)) {
@@ -127,7 +127,7 @@ function checkEmail(email){
 }
 
 function checkBirthdate(BirthDate){
-    const pattern = /^(19\d\d|20[01-2]\d|2023).(0[1-9]|1[0-2]).([0-2][1-9]|3[01])$/gm;
+    const pattern = /^(19\d\d|20[01-2]\d|2023).(0[1-9]|1[0-2]).([0-2][0-9]|3[01])$/gm;
 
 
     if (pattern.test(BirthDate.value)) {
@@ -213,8 +213,6 @@ function BoxCheck(element) {
         checked_count--;
     }
 
-    console.log(checked_count)
-
     if (checked_count > 2) {
         masodik_label.dataset.status = "incorrect"
         invalid_checkBox = true;
@@ -291,7 +289,6 @@ function ellenorzesbtn_click() {
 
     let t4_value = t4_1.value.toLowerCase()
     let t4_split = t4_value.split(' ')
-    console.log(t4_split)
 
     if (t4_split.includes("world")) {
         pontszam++

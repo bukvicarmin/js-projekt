@@ -192,7 +192,7 @@ input[data-status=incorrect]{
 }
 
 .email_label[data-status=incorrect]::before{
-    content: "Nem megfelelő a megadott email formátuma (min. 3 karakter @ domain . 2-4 karakter)";
+    content: "Nem megfelelő a megadott email formátuma (min. 3 karakter @ domain . 2-6 karakter)";
 }
 
 .birthdate_label[data-status=incorrect]::before{
